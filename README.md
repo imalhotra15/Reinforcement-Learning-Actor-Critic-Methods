@@ -112,6 +112,29 @@ adding replay buffers to store high priority transitions and sample good actions
 DDPG algorithm. Consequently, A2C struggled to discover the optimal policy in continuous
 environments like Pusher, MountainCar continuous, and Bipedal
 
+#### Differences between actor-critic and value based approximation algorithm:
+
+Value based approximation methods are Deep RL based methods to approximate the
+discounted cumulative reward for a state or state action pair and make a policy based on the
+approximations. In actor critic methods, the policy is simultaneously learnt along with a critic
+(policy approximators).
+
+Here are some key differences:
+
+● Exploration and Exploitation:
+
+Value-based algorithms typically use some strategy (eg. epsilon-greedy) to balance
+exploration and exploitation. The actor-critic algorithm naturally incorporates exploration
+by sampling action from a probability distribution.
+
+● Sample Efficiency
+
+Value based methods can be sample-efficient, especially to use off-policy algorithms like
+DQN. Actor-critic methods can also be sample-efficient, particularly when using off-policy
+variants such as DDPG or SAC.
+
+
+
 # Notes
 
 This was done as a part of the coursework of CSE 568 at the University at Buffalo. The source code is not available publicly to avoid academic integrity violations. Please feel free to contact the author if you wish access to the source code.
